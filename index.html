@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwotchV Roleplay | FiveM Server</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span class="brand-text">Swotch</span><span class="brand-highlight">V</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#about">Hakkımızda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#features">Özellikler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#map">Harita</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#rules">Kurallar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#gallery">Galeri</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#register">Kayıt Ol</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#contact">İletişim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" style="color: #2d7abe;" href="https://dnschanger.vercel.app" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> DNSChanger</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="overlay"></div>
+        <div class="container text-center">
+            <div class="hero-content">
+                <h1 class="display-3 fw-bold text-white mb-4">Swotch<span class="text-danger">V</span></h1>
+                <p class="lead text-white mb-5">Los Santos'un en gerçekçi roleplay deneyimi için şimdi katılın!</p>
+                <div class="server-stats mb-4">
+                    <span class="badge bg-success"><i class="fas fa-users"></i> <span id="online-players">0</span> Oyuncu Aktif</span>
+                    <span class="badge bg-primary"><i class="fas fa-server"></i> Sunucu Durumu: <span id="server-status">Çevrimiçi</span></span>
+                </div>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="#register" class="btn btn-danger btn-lg"><i class="fas fa-user-plus"></i> Kayıt Ol</a>
+                    <a href="fivem://connect/play.gtaroleplay.com" class="btn btn-primary btn-lg"><i class="fas fa-gamepad"></i> Sunucuya Katıl</a>
+                    <a href="https://discord.gg/" target="_blank" class="btn btn-discord btn-lg"><i class="fab fa-discord"></i> Discord'a Katıl</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Sunucumuz Hakkında</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <p>SwotchV Roleplay, gerçekçi bir roleplay deneyimi sunan özel bir FiveM sunucusudur. Sunucumuzda, gerçek hayatı simüle eden bir ortamda karakterinizi canlandırabilir, meslek sahibi olabilir, mülk satın alabilir ve diğer oyuncularla etkileşime girebilirsiniz.</p>
+                        <p>Deneyimli yönetim ekibimiz, oyunculara en iyi deneyimi sunmak için sürekli çalışmaktadır. Özel scriptlerimiz ve modlarımız ile benzersiz bir oyun deneyimi yaşayacaksınız.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Özel Meslekler ve Ekonomi Sistemi</li>
+                            <li><i class="fas fa-check-circle"></i> Gerçekçi Araç ve Silah Mekanikleri</li>
+                            <li><i class="fas fa-check-circle"></i> Aktif Yönetim ve Destek Ekibi</li>
+                            <li><i class="fas fa-check-circle"></i> Düzenli Etkinlikler ve Güncellemeler</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-img">
+                        <img src="img/swotchv.png" alt="SwotchV Roleplay Sunucusu" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-white">Sunucu Özellikleri</h2>
+                <div class="section-divider bg-danger"></div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="icon-box">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3>Özel Meslekler</h3>
+                        <p>Polis, doktor, mekanik, emlakçı ve daha fazlası! Kendi kariyerinizi seçin ve gelişin.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="icon-box">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3>Özel Araçlar</h3>
+                        <p>Yüzlerce özelleştirilmiş araç ve modifikasyon seçeneği ile kendi tarzınızı yansıtın.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="icon-box">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>Mülk Sistemi</h3>
+                        <p>Ev, apartman, iş yeri satın alın ve kendi mülklerinizi özelleştirin.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="icon-box">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Çeteler ve Organizasyonlar</h3>
+                        <p>Kendi çetenizi kurun veya mevcut bir organizasyona katılın.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="icon-box">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Gelişmiş Telefon Sistemi</h3>
+                        <p>Arama, mesajlaşma, uygulama ve GPS özellikleri ile gerçekçi telefon deneyimi.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="icon-box">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Özel Scriptler</h3>
+                        <p>Benzersiz oyun deneyimi için özel olarak geliştirilmiş scriptler ve modlar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="map" class="py-5">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Harita Keşfi</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="map-sidebar">
+                        <h3>Önemli Lokasyonlar</h3>
+                        <p>Los Santos'taki önemli noktaları keşfedin. Harita üzerindeki işaretlere tıklayarak detaylı bilgi alabilirsiniz.</p>
+                        
+                        <div class="location-list">
+                            <div class="location-item" data-location="police">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Polis Departmanı</span>
+                            </div>
+                            <div class="location-item" data-location="hospital">
+                                <i class="fas fa-hospital"></i>
+                                <span>Hastane</span>
+                            </div>
+                            <div class="location-item" data-location="mechanic">
+                                <i class="fas fa-wrench"></i>
+                                <span>Tamirci</span>
+                            </div>
+                            <div class="location-item" data-location="bank">
+                                <i class="fas fa-university"></i>
+                                <span>Banka</span>
+                            </div>
+                            <div class="location-item" data-location="clothing">
+                                <i class="fas fa-tshirt"></i>
+                                <span>Kıyafet Mağazası</span>
+                            </div>
+                            <div class="location-item" data-location="gas">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>Benzin İstasyonu</span>
+                            </div>
+                            <div class="location-item" data-location="apartment">
+                                <i class="fas fa-building"></i>
+                                <span>Apartmanlar</span>
+                            </div>
+                            <div class="location-item" data-location="club">
+                                <i class="fas fa-cocktail"></i>
+                                <span>Gece Kulüpleri</span>
+                            </div>
+                        </div>
+                        
+                        <div class="location-info mt-4">
+                            <h4 id="location-title">Lokasyon Seçin</h4>
+                            <p id="location-description">Harita üzerinde veya listeden bir lokasyon seçerek detaylı bilgi alabilirsiniz.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="map-container">
+                        <div id="game-map"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="rules" class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-white">Sunucu Kuralları</h2>
+                <div class="section-divider bg-danger"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="rules-container">
+                        <div class="rule-item">
+                            <h4><i class="fas fa-gavel"></i> Roleplay Kuralları</h4>
+                            <ul>
+                                <li>Her zaman karakterinize uygun davranın (RP bozma yasaktır)</li>
+                                <li>Metagaming yasaktır (OOC bilgileri IC kullanmak)</li>
+                                <li>Powergaming yasaktır (gerçekçi olmayan davranışlar)</li>
+                                <li>RDM (Sebepsiz öldürme) ve VDM (Araçla kasıtlı ezme) yasaktır</li>
+                                <li>Karakter ölümünden sonra önceki olayları unutun (New Life Rule)</li>
+                            </ul>
+                        </div>
+                        <div class="rule-item">
+                            <h4><i class="fas fa-comments"></i> İletişim Kuralları</h4>
+                            <ul>
+                                <li>Hakaret, küfür ve ayrımcılık içeren davranışlar yasaktır</li>
+                                <li>Mikrofon trollüğü ve rahatsız edici sesler çıkarmak yasaktır</li>
+                                <li>OOC (Out of Character) konuşmalar için /ooc komutunu kullanın</li>
+                                <li>Diğer oyuncuların RP deneyimini bozmayın</li>
+                            </ul>
+                        </div>
+                        <div class="rule-item">
+                            <h4><i class="fas fa-exclamation-triangle"></i> Genel Kurallar</h4>
+                            <ul>
+                                <li>Hile, mod ve exploit kullanımı kesinlikle yasaktır</li>
+                                <li>Sunucu hatalarını kötüye kullanmak yasaktır</li>
+                                <li>Yönetici kararlarına saygı gösterin</li>
+                                <li>Sunucu kaynaklarını izinsiz paylaşmak yasaktır</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="text-center mt-4">Kurallara uymayan oyuncular uyarı, geçici uzaklaştırma veya kalıcı ban ile cezalandırılabilir.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-5">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Sunucu Galerisi</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="row g-4" id="gallery-container">
+                <div class="col-md-4">
+                    <div class="gallery-item">
+                        <img src="img/sehir.png" alt="Sunucu Görüntüsü 1" class="img-fluid">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h4>Şehir Merkezi</h4>
+                                <p>Los Santos şehir merkezinden bir görüntü</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="gallery-item">
+                        <img src="img/polisdepartmani.png" alt="Sunucu Görüntüsü 2" class="img-fluid">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h4>Polis Departmanı</h4>
+                                <p>LSPD merkez binası</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="gallery-item">
+                        <img src="img/araclar.png" alt="Sunucu Görüntüsü 3" class="img-fluid">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h4>Özel Araçlar</h4>
+                                <p>Sunucumuzdaki özel araçlardan bir seçki</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="gallery-item">
+                        <img src="img/gecehayati.png" alt="Sunucu Görüntüsü 4" class="img-fluid">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h4>Gece Hayatı</h4>
+                                <p>Los Santos'un gece hayatından bir kare</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="gallery-item">
+                        <img src="img/sahil.png" alt="Sunucu Görüntüsü 5" class="img-fluid">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h4>Sahil Bölgesi</h4>
+                                <p>Vespucci Plajı'ndan manzara</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="gallery-item">
+                        <img src="img/etkinlik.png" alt="Sunucu Görüntüsü 6" class="img-fluid">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h4>Roleplay Etkinliği</h4>
+                                <p>Sunucumuzda gerçekleşen bir roleplay etkinliği</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="register" class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-white">Kayıt Ol</h2>
+                <div class="section-divider bg-danger"></div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="register-container">
+                        <div class="register-info mb-4">
+                            <h3>Sunucumuza Katılın</h3>
+                            <p>SwotchV Roleplay sunucumuza katılmak için aşağıdaki formu doldurarak kayıt olabilirsiniz. Kayıt olduktan sonra Discord sunucumuza katılmayı unutmayın!</p>
+                        </div>
+                        <form id="registerForm" class="register-form">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="username" class="form-label">Kullanıcı Adı</label>
+                                    <input type="text" class="form-control" id="username" placeholder="Kullanıcı adınızı girin" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">E-posta Adresi</label>
+                                    <input type="email" class="form-control" id="email" placeholder="E-posta adresinizi girin" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="characterName" class="form-label">Karakter Adı</label>
+                                <input type="text" class="form-control" id="characterName" placeholder="Karakter adınızı girin (Ad Soyad)" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="characterBackground" class="form-label">Karakter Geçmişi</label>
+                                <textarea class="form-control" id="characterBackground" rows="4" placeholder="Karakterinizin kısa bir geçmişini yazın" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="age" class="form-label">Yaşınız</label>
+                                <input type="number" class="form-control" id="age" min="16" max="99" placeholder="Gerçek yaşınızı girin" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="experience" class="form-label">Roleplay Deneyimi</label>
+                                <div class="custom-select-wrapper">
+                                    <select class="custom-select" id="experience" required>
+                                        <option value="" selected disabled>Roleplay deneyiminizi seçin</option>
+                                        <option value="none">Hiç deneyimim yok</option>
+                                        <option value="beginner">Başlangıç seviyesi (0-6 ay)</option>
+                                        <option value="intermediate">Orta seviye (6 ay-2 yıl)</option>
+                                        <option value="advanced">İleri seviye (2+ yıl)</option>
+                                    </select>
+                                    <div class="custom-select-icon">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="rulesCheck" required>
+                                <label class="form-check-label" for="rulesCheck">Sunucu kurallarını okudum ve kabul ediyorum</label>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="discordCheck" required>
+                                <label class="form-check-label" for="discordCheck">Discord sunucusuna katılacağımı onaylıyorum</label>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-danger btn-lg">Kayıt Ol</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">İletişim</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="contact-info">
+                        <h3>Bize Ulaşın</h3>
+                        <p>Sorularınız, önerileriniz veya şikayetleriniz için aşağıdaki kanallardan bize ulaşabilirsiniz:</p>
+                        <ul class="list-unstyled contact-list">
+                            <li><i class="fab fa-discord"></i> Discord: <a href="https://discord.gg/" target="_blank">discord.gg/swotchv</a></li>
+                            <li><i class="fas fa-envelope"></i> E-posta: <a href="mailto:info.swotch@gmail.com">info.swotch@gmail.com</a></li>
+                            <li><i class="fab fa-instagram"></i> Instagram: <a href="https://instagram.com/swotch9399" target="_blank">@swotch9399</a></li>
+                            <li><i class="fab fa-youtube"></i> YouTube: <a href="https://youtube.com/" target="_blank">SwotchV</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <h3>Mesaj Gönder</h3>
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="contactName" placeholder="Adınız" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" id="contactEmail" placeholder="E-posta Adresiniz" required>
+                            </div>
+                            <div class="mb-3">
+                                <div class="custom-select-wrapper">
+                                    <select class="custom-select" id="subject" required>
+                                        <option value="" selected disabled>Konu Seçin</option>
+                                        <option value="question">Soru</option>
+                                        <option value="suggestion">Öneri</option>
+                                        <option value="report">Şikayet</option>
+                                        <option value="other">Diğer</option>
+                                    </select>
+                                    <div class="custom-select-icon">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" id="message" rows="5" placeholder="Mesajınız" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-danger">Gönder</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Swotch<span class="text-danger">V</span></h3>
+                    <p>En iyi FiveM roleplay deneyimi için bize katılın!</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="social-links text-md-end">
+                        <a href="https://discord.gg/" target="_blank" class="social-link" style="text-decoration: none;"><i class="fab fa-discord"></i></a>
+                        <a href="https://instagram.com/swotch9399" target="_blank" class="social-link" style="text-decoration: none;"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/" target="_blank" class="social-link" style="text-decoration: none;"><i class="fab fa-youtube"></i></a>
+                        <a href="https://twitter.com/" target="_blank" class="social-link" style="text-decoration: none;"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2025 SwotchV Roleplay. Tüm hakları saklıdır.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Bu site Rockstar Games, Take-Two Interactive veya FiveM ile ilişkili değildir.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="notification-container" id="notificationContainer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <script src="script.js"></script>
+</body>
+</html>
